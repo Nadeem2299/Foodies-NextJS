@@ -1,0 +1,10 @@
+Server vs Client component
+1. React Server component (RSC)
+    components that are only rendered on the server
+    by default, all react components(next js apps) are RSCs
+    advantages- less client side js,
+    faster page loads, SEO benefits
+
+2. Client component
+    components that are pre-rendered on the server but then also potentially on the client
+    
