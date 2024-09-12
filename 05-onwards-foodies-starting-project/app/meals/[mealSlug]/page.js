@@ -1,9 +1,28 @@
+import Image from 'next/image';
+import classes from './page.module.css';
+import { getMeal } from '@/lib/meals';
+
 export default function MealDetailsPage({ params }) {
+  const meal = getMeal();
   return (
+    <>
+    <header className={classes.header}>
+      <div className={classes.image}>
+        <Image fill />
+      </div>
+      <div className={classes.headerText}>
+        <h1>TITLE</h1>
+        <p className={classes.creator}>
+          by <a href={`mailto:${'EMAIL'}`}>NAME</a>
+        </p>
+        <p className={classes.summary}>SUMMARY</p>
+      </div>
+    </header>
     <main>
-    <h1>This is a Meal</h1>
-    <p>This is a paragraph of text.</p>
-    <p>{params.mealSlug}</p>
+      <p className={classes.instructions} dangerouslySetInnerHTML={{
+        __html: '...',
+      }}></p>
     </main>
+    </>
   )
 }
