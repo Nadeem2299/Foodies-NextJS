@@ -9,6 +9,10 @@ export async function getMeals () {
   return db.prepare('SELECT * FROM meals').all(); // all used for fething data run for changing data and get for fetching single row
 }
 
-export async function getMeal(slug) {
+export function getMeal(slug) {
   return db.prepare('SELECT * FROM meals WHERE slug = ?').get(slug);
+}
+
+export function saveMeal(meal) {
+
 }
